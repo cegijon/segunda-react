@@ -12,7 +12,6 @@ const App = () => {
       "condition": "new",
       "free_shipping": true,
       "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg",
-      "stock": 32
     },
     {
       "id": "MLA807148555",
@@ -410,9 +409,8 @@ const App = () => {
 
   return (
     <div className="grid">
-      {products[0].stock > 0
-        ? <Card info={products[0]}></Card>
-        : <p>No hay stock</p>
+
+      {products.map(product => <Card info={product}/>)
       }
     </div>
   );
