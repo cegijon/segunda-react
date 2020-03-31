@@ -1,6 +1,8 @@
 import React from 'react';
 import './Card.css';
 import truck from './truck.jpg';
+import envio_pago from './dolar.png';
+
 
 
 const Card = props => {
@@ -12,11 +14,13 @@ const Card = props => {
             <div className="bottom">
                 <div className="details">
                     <h5>{props.info.title}</h5>
-                    <h6>{props.info.price}</h6>
+                    <p>{props.info.price}</p>
                 </div>
                 <div className="shipping">
-                    {props.info.free_shipping === true &&
-                        < img src={truck}></img>}
+                    {props.info.free_shipping &&
+                    < img src={truck}></img>
+                    }
+
                 </div>
             </div>
 

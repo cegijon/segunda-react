@@ -11,7 +11,8 @@ const App = () => {
       "price": 28599,
       "condition": "new",
       "free_shipping": true,
-      "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg"
+      "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg",
+      "stock": 32
     },
     {
       "id": "MLA807148555",
@@ -409,7 +410,10 @@ const App = () => {
 
   return (
     <div className="grid">
-      <Card info={products[0]}></Card>
+      {products[0].stock > 0
+        ? <Card info={products[0]}></Card>
+        : <p>No hay stock</p>
+      }
     </div>
   );
 }
